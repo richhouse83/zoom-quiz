@@ -12,24 +12,26 @@ describe("JService.getQuestion", () => {
   test("Returns a question", async () => {
     const question = await jService();
 
-    expect(question).toEqual({
-      id: expect.any(Number),
-      answer: expect.any(String),
-      question: expect.any(String),
-      value: expect.any(Number),
-      airdate: expect.any(String),
-      created_at: expect.any(String),
-      updated_at: expect.any(String),
-      category_id: expect.any(Number),
-      game_id: null,
-      invalid_count: null,
-      category: {
+    expect(question).toEqual([
+      {
         id: expect.any(Number),
-        title: expect.any(String),
+        answer: expect.any(String),
+        question: expect.any(String),
+        value: expect.any(Number),
+        airdate: expect.any(String),
         created_at: expect.any(String),
         updated_at: expect.any(String),
-        clues_count: expect.any(Number),
+        category_id: expect.any(Number),
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: expect.any(Number),
+          title: expect.any(String),
+          created_at: expect.any(String),
+          updated_at: expect.any(String),
+          clues_count: expect.any(Number),
+        },
       },
-    });
+    ]);
   });
 });
