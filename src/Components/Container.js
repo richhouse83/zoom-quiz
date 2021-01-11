@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import QuestionDisplay from "./QuestionDisplay";
+import "./components.css";
 const { jService } = require("../utils/jService");
 
 function Container(props) {
   const [question, setQuestion] = useState([]);
   return (
-    <div className="Intro">
+    <div className="intro">
       <h1>Zoom Quiz Generator</h1>
-      <p>Generate a quick and simple Zoom Quiz here!</p>
+      <h2>Generate a quick and simple Zoom Quiz here!</h2>
       <button
         onClick={() =>
           jService().then((question) => {
