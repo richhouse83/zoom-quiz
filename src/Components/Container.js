@@ -1,24 +1,48 @@
 import React, { useState } from "react";
 import QuestionDisplay from "./QuestionDisplay";
 import "./components.css";
+import TeamsContainer from "./TeamsContainer";
 const { jService } = require("../utils/jService");
 
 function Container(props) {
   const [question, setQuestion] = useState([]);
+  const [teamName, setTeamName] = useState("");
+  const [teams, setTeams] = useState([]);
   return (
-    <div className="intro">
-      <h1>Zoom Quiz Generator</h1>
-      <h2>Generate a quick and simple Zoom Quiz here!</h2>
-      <button
-        onClick={() =>
-          jService().then((question) => {
-            setQuestion(() => question);
-          })
-        }
-      >
-        Generate New Question
-      </button>
-      <QuestionDisplay question={question} />
+    <div className="container">
+      <div className="question-container">
+        <h2>Generate a quick and simple Zoom Quiz here!</h2>
+        <button
+          onClick={() =>
+            jService().then((question) => {
+              setQuestion(() => question);
+            })
+          }
+        >
+          Generate New Question
+        </button>
+        <QuestionDisplay question={question} />
+      </div>
+      <div className="teams-container">
+        <input
+          type="text"
+          name="teamname"
+          value={teamName}
+          onChange={(event) => setTeamName(event.target.value)}
+        ></input>
+        <button
+          onClick={() => {
+            setTeams((prevState) => [
+              ...prevState,
+              { key: teams.length + 1, name: teamName },
+            ]);
+            setTeamName(() => "");
+          }}
+        >
+          Add Team
+        </button>
+        <TeamsContainer teams={teams} />
+      </div>
     </div>
   );
 }

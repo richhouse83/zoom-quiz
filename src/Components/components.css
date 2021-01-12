@@ -10,13 +10,33 @@ button:hover {
   background-color: rgb(90, 77, 173);
 }
 
-.intro {
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
+button:focus {
+  outline: none;
 }
-.intro h2 {
+
+.question-container {
+  min-height: 30rem;
+  padding: 20px;
+}
+
+.container h4,
+h2 {
+  font-family: "Oswald", sans-serif;
   font-weight: 300;
 }
+
 .question-display {
   font-family: "EB Garamond", serif;
+}
+
+.category {
+  margin: 5px;
+}
+.teams-display {
+  display: grid;
+  grid-template-areas: "team team team team team";
+}
+
+.team {
+  width: 10rem;
 }
