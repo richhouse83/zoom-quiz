@@ -39,3 +39,37 @@ code {
 .jservice a {
   color: floralwhite;
 }
+
+.icons {
+  padding-left: 10px;
+  transform: translateY(-7px);
+}
+
+.fa-house-user {
+  transform: translateY(-9px);
+}
+
+.icons:hover {
+  color: rgb(60, 51, 119);
+  transform: translateY(-12px);
+  transition: 400ms;
+}
+
+#links {
+  font-size: 1.8rem;
+  padding-left: 10px;
+  opacity: 0;
+  transition: opacity, 500ms;
+}
+
+#rh {
+  border-top: transparent 3px solid;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 200ms;
+}
+
+#rh:hover {
+  border-top: darkslateblue 3px solid;
+  transition: 200ms;
+}

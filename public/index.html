@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Oswald:wght@300;400&display=swap"
       rel="stylesheet">
+    <script src="https://kit.fontawesome.com/43ee9257b8.js" crossorigin="anonymous"></script>
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -31,8 +32,8 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <navbar>
-      <div class='logo'><h3>Zoom Quiz Generator</h3>by <a href="http://richhouse83.github.io" target="_blank">Rich House</a></div>
+    <navbar id = "navbar">
+      <div class='logo'><h3>Zoom Quiz Generator</h3>by <span id="rh">Rich House</span></div>  <div id='links'><a href="https://github.com/richhouse83" target="_blank"><i class="fab fa-github-square icons"></i></a><a href="http://richhouse83.github.io" target="_blank"><i class="fas fa-house-user icons"></i></a></div>
     </navbar>
       <p class='jservice'>Question Api provided by <a href="http://jservice.io/" target="_blank">jService</a></p>
 
@@ -47,5 +48,29 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="text/javascript">
+      const links = document.getElementById('links');
+      const rh = document.getElementById('rh');
+      const navbar = document.getElementById('navbar');
+      let visible = false;
+      rh.onclick = () => {
+        if (visible) {
+          links.style.opacity = '0'
+          links.style.transform = "translateY(-5px)"
+          visible = false;
+        }
+        else {
+          links.style.opacity = "1";
+          links.style.transform = "translateY(5px)"
+          visible = true
+        }
+      }
+      
+      navbar.onmouseleave = () => {
+        links.style.opacity = '0';
+        links.style.transform = "translateY(-5px)"
+        visible = false
+      }
+    </script>
   </body>
 </html>
