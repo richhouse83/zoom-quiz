@@ -43,6 +43,7 @@ code {
 .icons {
   padding-left: 10px;
   transform: translateY(-7px);
+  transition: 100ms;
 }
 
 .fa-house-user {
@@ -50,7 +51,6 @@ code {
 }
 
 .icons:hover {
-  color: rgb(60, 51, 119);
   transform: translateY(-12px);
   transition: 400ms;
 }

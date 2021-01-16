@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 const api = "http://jservice.io/api/random";
 
@@ -10,4 +10,4 @@ const jService = async () => {
   return question;
 };
 
-module.exports = { jService };
+export default jService;

@@ -34,9 +34,28 @@ h2 {
 }
 .teams-display {
   display: grid;
+  justify-content: center;
   grid-template-areas: "team team team team team";
 }
 
 .team {
   width: 10rem;
+}
+
+@media only screen and (max-width: 640px), (max-device-width: 640px) {
+  .teams-display {
+    grid-template-areas: "team team team";
+  }
+}
+
+@media only screen and (max-width: 440px), (max-device-width: 440px) {
+  .teams-display {
+    grid-template-areas: "team team";
+  }
+}
+
+@media only screen and (max-width: 376px), (max-device-width: 376px) {
+  .teams-display {
+    grid-template-areas: "team";
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import QuestionDisplay from "./QuestionDisplay";
 import "./components.css";
 import TeamsContainer from "./TeamsContainer";
-const { jService } = require("../utils/jService");
+import jService from "../utils/jService";
 
 function Container(props) {
   const [question, setQuestion] = useState([]);
