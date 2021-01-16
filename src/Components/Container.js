@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import QuestionDisplay from "./QuestionDisplay";
 import "./components.css";
 import TeamsContainer from "./TeamsContainer";
-import jService from "../utils/jService";
+import openT from "../utils/open-t";
 
 function Container(props) {
   const [question, setQuestion] = useState([]);
-  const [teamName, setTeamName] = useState("");
   const [teams, setTeams] = useState([]);
+  const [teamName, setTeamName] = useState(`Team 1`);
   return (
     <div className="container">
       <div className="question-container">
         <h2>Generate a quick and simple Zoom Quiz here!</h2>
         <button
           onClick={() =>
-            jService().then((question) => {
+            openT().then((question) => {
               setQuestion(() => question);
             })
           }
@@ -36,7 +36,7 @@ function Container(props) {
               ...prevState,
               { key: teams.length + 1, name: teamName },
             ]);
-            setTeamName(() => "");
+            setTeamName(() => `Team ${teams.length + 2}`);
           }}
         >
           Add Team

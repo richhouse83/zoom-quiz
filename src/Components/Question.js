@@ -6,9 +6,13 @@ function Question(props) {
   return (
     <div className="questionContainer">
       <h4 className="category">Category:</h4>
-      <h4 className="category">{props.question.category.title}</h4>
+      <h4 className="category">
+        {decodeURIComponent(props.question.category)}
+      </h4>
       <h2 className="question">Question:</h2>
-      <h2 className="question">{props.question.question}</h2>
+      <h2 className="question">
+        {decodeURIComponent(props.question.question)}
+      </h2>
       <button
         onClick={() => {
           setIsHidden(() => true);
@@ -16,7 +20,9 @@ function Question(props) {
       >
         Click To Reveal Answer
       </button>
-      {isHidden && <Answer answer={props.question.answer} />}
+      {isHidden && (
+        <Answer answer={decodeURIComponent(props.question.correct_answer)} />
+      )}
     </div>
   );
 }

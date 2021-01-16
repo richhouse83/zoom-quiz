@@ -31,6 +31,7 @@ h2 {
 
 .category {
   margin: 5px;
+  font-size: 1.2rem;
 }
 .teams-display {
   display: grid;
@@ -46,11 +47,32 @@ h2 {
   .teams-display {
     grid-template-areas: "team team team";
   }
+  button {
+    width: 75%;
+    min-height: 2rem;
+    font-size: 1rem;
+  }
+  input {
+    width: 75%;
+    height: 2rem;
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 440px), (max-device-width: 440px) {
   .teams-display {
     grid-template-areas: "team team";
+  }
+
+  button {
+    width: 85%;
+    min-height: 3rem;
+    font-size: 1.3rem;
+  }
+  input {
+    width: 85%;
+    min-height: 3rem;
+    font-size: 1.3rem;
   }
 }
 
