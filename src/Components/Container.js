@@ -5,23 +5,39 @@ import TeamsContainer from "./TeamsContainer";
 import openT from "../utils/open-t";
 
 function Container(props) {
+  const [difficulty, setDifficulty] = useState("easy");
   const [question, setQuestion] = useState([]);
   const [teams, setTeams] = useState([]);
   const [teamName, setTeamName] = useState(`Team 1`);
+  const [revealAnswer, setRevealAnswer] = useState(false);
   return (
     <div className="container">
       <div className="question-container">
         <h2>Generate a quick and simple Zoom Quiz here!</h2>
+        <label for="difficulty">Difficulty: </label>
+        <select
+          name="difficulty"
+          id="difficulty"
+          onChange={(event) => {
+            setDifficulty(event.target.value);
+          }}
+        >
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+        <br />
+        <br />
         <button
           onClick={() =>
-            openT().then((question) => {
+            openT(difficulty.toLowerCase()).then((question) => {
               setQuestion(() => question);
             })
           }
         >
           Generate New Question
         </button>
-        <QuestionDisplay question={question} />
+        <QuestionDisplay question={question} revealAnswer={revealAnswer} />
       </div>
       <div className="teams-container">
         <input

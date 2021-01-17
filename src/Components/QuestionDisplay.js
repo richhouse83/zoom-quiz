@@ -5,7 +5,7 @@ import "./components.css";
 function QuestionDisplay(props) {
   return (
     <div className="question-display">
-      {props.question.map((question, index) => {
+      {props.question.map((question) => {
         return <Question key={question.question} question={question} />;
       })}
     </div>
