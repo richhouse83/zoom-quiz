@@ -11,7 +11,7 @@ const openT = async (difficulty = "medium") => {
         return { correct: "❌", answer };
       });
       if (results[0].incorrect_answers.length === 3) {
-        results[0].options.splice(Math.floor(Math.random() * 3), 0, {
+        results[0].options.splice(Math.floor(Math.random() * 4), 0, {
           correct: "✅",
           answer: results[0].correct_answer,
         });
