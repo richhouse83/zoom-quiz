@@ -9,7 +9,6 @@ function Container(props) {
   const [question, setQuestion] = useState([]);
   const [teams, setTeams] = useState([]);
   const [teamName, setTeamName] = useState(`Team 1`);
-  const [revealAnswer, setRevealAnswer] = useState(false);
   return (
     <div className="container">
       <div className="question-container">
@@ -37,7 +36,7 @@ function Container(props) {
         >
           Generate New Question
         </button>
-        <QuestionDisplay question={question} revealAnswer={revealAnswer} />
+        <QuestionDisplay question={question} />
       </div>
       <div className="teams-container">
         <input

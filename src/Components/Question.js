@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import Answer from "./Answer";
 import Options from "./Options";
 
 function Question(props) {
-  const [correctAnswerHidden, setcorrectAnswerHidden] = useState(false);
-  const [optionsVisible, setOptionsVisible] = useState(true);
   const [revealAnswer, setRevealAnswer] = useState(false);
   return (
     <div className="questionContainer">
@@ -14,17 +11,10 @@ function Question(props) {
       <h2 className="question">
         {decodeURIComponent(props.question.question)}
       </h2>
-      {optionsVisible && (
-        <Options options={props.question.options} revealAnswer={revealAnswer} />
-      )}
-      {correctAnswerHidden && (
-        <Answer answer={decodeURIComponent(props.question.correct_answer)} />
-      )}
+      <Options options={props.question.options} revealAnswer={revealAnswer} />
       <button
         onClick={() => {
           setRevealAnswer(true);
-          // setcorrectAnswerHidden(() => true);
-          // setOptionsVisible(() => false);
         }}
       >
         Click To Reveal Answer
